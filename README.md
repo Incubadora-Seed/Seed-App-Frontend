@@ -1,2 +1,2 @@
 # Seed Mobile App - Frontend
-Mobile app for Seed Incubator at IFSul Campus Sapiranga
+Mobile app Frontend for Seed Incubator at IFSul Campus Sapiranga
