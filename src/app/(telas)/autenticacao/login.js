@@ -9,8 +9,8 @@ export default function Login() {
         <View>
             <Image style={styles.imgBanner} source={require('../../../../assets/imgs/bannerSeed1.png')}/>
             <View>
-                <TextInput style={styles.inputEmail}></TextInput>
-                <TextInput style={styles.inputSenha}></TextInput>
+                <TextInput style={styles.inputEmail} placeholder='E-mail'></TextInput>
+                <TextInput style={styles.inputSenha} placeholder='Senha'></TextInput>
             </View>
         </View>
     )
