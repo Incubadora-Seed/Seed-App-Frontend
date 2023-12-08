@@ -7,10 +7,6 @@
 //                 headerTitle: 'Home Page',
 //                 title: 'Home',
 //             }} />
-//             <Tabs.Screen name='users/[id]' options={{
-//                 headerTitle: 'User Page',
-//                 title: 'User',
-//             }} />
 //         </Tabs>
 //     )
 // }

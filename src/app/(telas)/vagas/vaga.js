@@ -2,10 +2,10 @@ import { View, Text } from 'react-native';
 
 // Tela: ...
 
-export default function Home() {
+export default function Vaga() {
     return (
         <View>
-            <Text>Home</Text>
+            <Text>Vaga</Text>
         </View>
     )
 }
