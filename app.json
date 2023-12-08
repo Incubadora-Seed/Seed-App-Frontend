@@ -19,6 +19,7 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.ifsul.seed",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#000000"
