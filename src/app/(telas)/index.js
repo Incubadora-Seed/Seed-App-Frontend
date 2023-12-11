@@ -1,6 +1,6 @@
 import { Link } from 'expo-router';
 import { View, Text, StyleSheet } from 'react-native';
-import { useFonts, Poppins_400Regular, Poppins_700Bold } from '@expo-google-fonts/poppins';
+import { useFonts, Poppins_400Regular, Poppins_600SemiBold, Poppins_700Bold } from '@expo-google-fonts/poppins';
 import { useCallback } from 'react';
 import * as SplashScreen from 'expo-splash-screen';
 
@@ -11,6 +11,7 @@ SplashScreen.preventAutoHideAsync();
 export default function Home() {
     let [fontsLoaded, fontError] = useFonts({
         Poppins_400Regular,
+        Poppins_600SemiBold,
         Poppins_700Bold
     });
 
