@@ -28,6 +28,7 @@ export default function Home() {
     return (
         <View onLayout={onLayoutRootView}>
             <Link href={'/autenticacao/login'}><Text style={styles.txt}>Login</Text></Link>
+            <Link href={'autenticacao/cadastro'}><Text style={styles.txt}>Cadastro</Text></Link>
         </View>
     )
 }
