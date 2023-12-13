@@ -3,13 +3,10 @@ import { Link } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
 export default function ButtonReturn({ path, style }) {
-    if (!path) path = '#';
     return (
         <View style={style}>
             <TouchableOpacity>
-                <Link href={path}>
-                    <Ionicons name='arrow-back-outline' size={35} color='black' />
-                </Link>
+                <Ionicons name='menu-outline' size={40} color='black' />
             </TouchableOpacity>
         </View>
     )
