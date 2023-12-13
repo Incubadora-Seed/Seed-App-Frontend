@@ -1,11 +1,11 @@
 import { View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { useState } from 'react';
 import { Link } from 'expo-router';
-import styles from '../../../styles/Cadastro.js';
-import Input from '../../../components/Input.js';
-import Button1 from '../../../components/Button1.js';
-import ButtonReturn from '../../../components/ButtonReturn.js';
-import Dropdown1 from '../../../components/Dropdown1.js';
+import styles from '../../styles/Cadastro.js';
+import Input from '../../components/Input.js'
+import Button1 from '../../components/Button1.js';
+import ButtonReturn from '../../components/ButtonReturn.js';
+import Dropdown1 from '../../components/Dropdown1.js';
 
 // Tela: https://www.figma.com/file/f2Vsc2XnqkxnL9iYGbFvXz/APP-SEED?type=design&node-id=21-355&mode=design&t=OcnMSN4vulBDbebg-4
 
@@ -29,7 +29,7 @@ export default function Login() {
     return (
         <ScrollView>
             <View style={styles.viewContainer}>
-                <Image style={styles.imgBanner} source={require('../../../../assets/imgs/bannerSeed1.png')} />
+                <Image style={styles.imgBanner} source={require('../../../assets/imgs/bannerSeed1.png')} />
                 <View style={styles.viewTitle}>
                     <ButtonReturn style={styles.btnReturn} path={'/autenticacao/login'} />
                     <Text style={styles.txtTitle}>Criar Conta</Text>
