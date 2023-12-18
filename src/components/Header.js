@@ -20,11 +20,11 @@ export default function Header({ variant, returnPath, nome, nomePath, style }) {
             {variant === 1 && <ButtonReturn path={returnPath} />}
             {variant === 2 && <ButtonPerfil />}
             {(nome && nomePath) && (
-                <TouchableOpacity>
-                    <Link href={nomePath}>
+                <Link href={nomePath} asChild>
+                    <TouchableOpacity>
                         <Text style={styles.txtNome}>{nome}</Text>
-                    </Link>
-                </TouchableOpacity>
+                    </TouchableOpacity>
+                </Link>
             )}
             {(nome && (!nomePath)) && (<Text style={styles.txtNome}>{nome}</Text>)}
             <ButtonMenu />

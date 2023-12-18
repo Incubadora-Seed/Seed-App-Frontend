@@ -18,11 +18,11 @@ export default function Login() {
             <TouchableOpacity style={styles.btnEsqueceuSenha}>
                 <Text style={styles.txtBtnEsqueceuSenha}>Esqueceu sua senha?</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
-                <Link href={'/autenticacao/cadastro'}>
+            <Link href={'/autenticacao/cadastro'} asChild>
+                <TouchableOpacity>
                     <Text style={styles.txtBtnCriarConta}>Criar nova conta</Text>
-                </Link>
-            </TouchableOpacity>
+                </TouchableOpacity>
+            </Link>
         </View>
     )
 }

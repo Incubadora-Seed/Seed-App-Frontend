@@ -5,11 +5,11 @@ import { Ionicons } from '@expo/vector-icons';
 export default function ButtonReturn({ style }) {
     return (
         <View style={style}>
-            <TouchableOpacity>
-                <Link href={'#'}>
+            <Link href={'#'} asChild>
+                <TouchableOpacity>
                     <Ionicons name='person-outline' size={35} color='black' />
-                </Link>
-            </TouchableOpacity>
+                </TouchableOpacity>
+            </Link>
         </View>
     )
 }

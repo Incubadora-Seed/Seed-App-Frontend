@@ -6,11 +6,11 @@ export default function ButtonReturn({ path, style }) {
     if (!path) path = '#';
     return (
         <View style={style}>
-            <TouchableOpacity>
-                <Link href={path}>
+            <Link href={path} asChild>
+                <TouchableOpacity>
                     <Ionicons name='arrow-back-outline' size={35} color='black' />
-                </Link>
-            </TouchableOpacity>
+                </TouchableOpacity>
+            </Link>
         </View>
     )
 }
