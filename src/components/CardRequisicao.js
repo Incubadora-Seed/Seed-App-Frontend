@@ -1,14 +1,12 @@
 import { View, Text, TouchableOpacity } from 'react-native'
-import { Ionicons } from '@expo/vector-icons'
 import { Link } from "expo-router";
 import TagCategoria from './TagCategoria.js';
 import styles from '../styles/CardRequisicao.js'
 
-export default function CardRequisicao({ titulo, descricao, prazo, categoria, path, style }) {
-    if (!path) path = '#'
+export default function CardRequisicao({ titulo, descricao, prazo, categoria, style, idRequisicao }) {
 
     return (
-        <Link href={path} asChild style={style}>
+        <Link href={`/requisicoes/${idRequisicao}`} asChild style={style}>
             <TouchableOpacity style={styles.elevation} activeOpacity={0.5}>
                 <View style={styles.viewMain}>
                     <View style={styles.viewEsquerda}>

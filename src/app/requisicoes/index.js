@@ -56,7 +56,7 @@ export default function ListaRequisicoes() {
                             <CardRequisicao key={index} titulo={item.titulo}
                                 descricao={item.descricao}
                                 prazo={item.prazo} categoria={item.categoria}
-                                path={'/requisicoes/' + item.idRequisicao}
+                                idRequisicao={item.idRequisicao}
                                 style={{ marginBottom: 25 }}
                             />
                         ))
