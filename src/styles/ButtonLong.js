@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default styles = StyleSheet.create({
     btn: {
         backgroundColor: '#000',
-        width: 181,
+        width: '100%',
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
@@ -12,7 +12,7 @@ export default styles = StyleSheet.create({
     txtBtn: {
         color: "#FFF",
         fontFamily: 'Poppins_400Regular',
-        fontSize: 30,
-        lineHeight: 44
+        fontSize: 28,
+        lineHeight: 42,
     }
 })

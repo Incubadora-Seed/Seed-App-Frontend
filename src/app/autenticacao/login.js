@@ -14,7 +14,7 @@ export default function Login() {
                 <Input placeholder='E-mail' icon='mail-outline' inputMode='email' style={{ marginBottom: 35 }} />
                 <Input placeholder='Senha' icon='lock-closed-outline' secureTextEntry={true} />
             </View>
-            <Button1 text='Entrar' />
+            <Button1 text='Entrar' style={{marginBottom: '16.5%'}} />
             <TouchableOpacity style={styles.btnEsqueceuSenha}>
                 <Text style={styles.txtBtnEsqueceuSenha}>Esqueceu sua senha?</Text>
             </TouchableOpacity>

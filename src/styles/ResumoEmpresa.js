@@ -26,5 +26,9 @@ export default styles = StyleSheet.create({
         fontFamily: 'Poppins_400Regular',
         fontSize: 16,
         lineHeight: 20,
+    },
+    imgEmpresa:{
+        width: 50,
+        height: 50,
     }
 })
