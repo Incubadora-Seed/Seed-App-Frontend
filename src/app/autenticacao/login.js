@@ -12,7 +12,7 @@ export default function Login() {
             <Image style={styles.imgBanner} source={require('../../../assets/imgs/bannerSeed1.png')} />
             <View style={styles.viewInputs}>
                 <Input placeholder='E-mail' icon='mail-outline' inputMode='email' style={{ marginBottom: 35 }} />
-                <Input placeholder='Senha' icon='lock-closed-outline' />
+                <Input placeholder='Senha' icon='lock-closed-outline' secureTextEntry={true} />
             </View>
             <Button1 text='Entrar' style={{marginBottom: '16.5%'}} />
             <TouchableOpacity style={styles.btnEsqueceuSenha}>
