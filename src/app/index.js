@@ -32,6 +32,7 @@ export default function Home() {
             <Link href={'/autenticacao/login'}><Text style={styles.txt}>Login</Text></Link>
             <Link href={'autenticacao/cadastro'}><Text style={styles.txt}>Cadastro</Text></Link>
             <Link href={'/requisicoes'}><Text style={styles.txt}>Requisições</Text></Link>
+            <Link href={'/principal'}><Text style={styles.txt}>Principal</Text></Link>
         </View>
     )
 }
