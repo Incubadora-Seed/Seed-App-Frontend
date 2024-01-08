@@ -38,7 +38,7 @@ export default function Login() {
                     <Dropdown1 placeholder='Tipo de Conta' icon='people-outline' data={dropdownContaData} setSelected={setTipoConta} style={{ marginBottom: 35 }} />
                     {tipoConta == 'Aluno' && formAluno}
                 </View>
-                {tipoConta && <Button1 text='Cadastrar' />}
+                {tipoConta && <Button1 text='Cadastrar' style={{marginBottom: '16.5%'}}/>}
             </View>
         </ScrollView>
     )

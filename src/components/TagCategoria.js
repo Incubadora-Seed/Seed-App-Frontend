@@ -2,7 +2,7 @@ import { View, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import styles from '../styles/TagCategoria.js';
 
-export default function TagCategoria({ categoria, withText }) {
+export default function TagCategoria({ categoria, comTexto, style }) {
     var icon, backgroundColor
 
     switch (categoria) {
@@ -13,9 +13,9 @@ export default function TagCategoria({ categoria, withText }) {
     }
 
     return (
-        <View style={[withText ? (styles.viewMain2) : (styles.viewMain1), { backgroundColor }]}>
+        <View style={[comTexto ? (styles.viewMain2) : (styles.viewMain1), { backgroundColor }, style]}>
             <Ionicons name={icon} size={20} color='white' />
-            {withText && <Text style={styles.txtCategoria}>{categoria}</Text>}
+            {comTexto && <Text style={styles.txtCategoria}>{categoria}</Text>}
         </View>
     )
 }

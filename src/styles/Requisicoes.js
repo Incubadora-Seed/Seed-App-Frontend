@@ -15,14 +15,19 @@ export default styles = StyleSheet.create({
         marginTop: '3%'
     },
     viewCards: {
-        width: '85%',
+        width: '100%',
+        paddingHorizontal: 15
     },
     linkCriarRequisicao: {
         backgroundColor: '#fff',
         borderRadius: 20,
         elevation: 4,
-        width: '85%',
+        Width: '100%',
         marginBottom: 25
+    },
+    viewCardCriar: {
+        width: '100%',
+        paddingHorizontal: 15
     },
     viewCriarRequisicao: {
         width: '100%',
