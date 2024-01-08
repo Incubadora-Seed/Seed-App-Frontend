@@ -21,8 +21,8 @@ export default function Login() {
             <Input placeholder='E-mail' icon='mail-outline' inputMode='email' style={{ marginBottom: 35 }} />
             <Dropdown1 placeholder='Curso' icon='book-outline' data={dropdownCursoData} setSelected={setCurso} style={{ marginBottom: 35 }} />
             <Input placeholder='Ano que está cursando' icon='calendar-outline' inputMode='numeric' style={{ marginBottom: 35 }} />
-            <Input placeholder='Senha' icon='lock-closed-outline' style={{ marginBottom: 35 }} />
-            <Input placeholder='Confirme a Senha' icon='shield-checkmark-outline' />
+            <Input placeholder='Senha' icon='lock-closed-outline' style={{ marginBottom: 35 }} secureTextEntry={true} />
+            <Input placeholder='Confirme a Senha' icon='shield-checkmark-outline' secureTextEntry={true} />
         </>
     )
 
