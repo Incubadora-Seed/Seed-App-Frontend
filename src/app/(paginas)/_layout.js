@@ -60,7 +60,6 @@ export default function Layout() {
                         header: () => (<Header variant={1} navigation={navigation} />)
                     })}
                 />
-
                 <Drawer.Screen
                     name='autenticacao/cadastro'
                     options={{
@@ -68,7 +67,6 @@ export default function Layout() {
                         title: ''
                     }}
                 />
-
                 <Drawer.Screen
                     name='perfil/index'
                     options={{
