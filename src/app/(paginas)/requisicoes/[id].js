@@ -1,5 +1,4 @@
 import { View, ScrollView, Text } from 'react-native';
-import Header from '../../../components/Header';
 import TagCategoria from '../../../components/TagCategoria';
 import ResumoEmpresa from '../../../components/ResumoEmpresa';
 import ButtonLong from '../../../components/ButtonLong';
@@ -24,7 +23,6 @@ export default function Requisicao() {
 
     return (
         <ScrollView>
-            <Header variant={1} returnPath={'/requisicoes'} />
             <View style={styles.viewContainer}>
                 <Text style={styles.txtTitulo}>{fetchData.titulo}</Text>
                 <TagCategoria style={{ marginBottom: 25 }} categoria={fetchData.categoria} comTexto={true} />

@@ -1,64 +1,86 @@
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Drawer } from 'expo-router/drawer';
+import Header from '../../components/Header';
 
 export default function Layout() {
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
-            <Drawer>
+            <Drawer
+                screenOptions={({ navigation }) => ({
+                    drawerLabelStyle: {
+                        fontFamily: 'Poppins_400Regular',
+                        fontSize: 18,
+                        lineHeight: 23,
+                    },
+                    drawerActiveBackgroundColor: '#4D4DFF',
+                    drawerActiveTintColor: '#FFF',
+                    drawerInactiveTintColor: '#000',
+                    drawerPosition: 'right',
+                    sceneContainerStyle: {
+                        backgroundColor: '#FFF'
+                    }
+                })}>
                 <Drawer.Screen
                     name='index'
-                    options={{
+                    options={({ navigation }) => ({
                         drawerLabel: 'Tela Inicial',
-                        title: ''
-                    }}
+                        title: '',
+                        header: () => (<Header variant={2} navigation={navigation} />)
+                    })}
                 />
                 <Drawer.Screen
                     name='incubar/index'
-                    options={{
+                    options={({ navigation }) => ({
                         drawerLabel: 'Incubar sua empresa',
-                        title: ''
-                    }}
+                        title: '',
+                        header: () => (<Header variant={1} navigation={navigation} />)
+                    })}
                 />
                 <Drawer.Screen
                     name='requisicoes/index'
-                    options={{
+                    options={({ navigation }) => ({
                         drawerLabel: 'Requisições',
-                        title: ''
-                    }}
+                        title: '',
+                        header: () => (<Header variant={1} navigation={navigation} />)
+                    })}
                 />
                 <Drawer.Screen
                     name='vagas/index'
-                    options={{
+                    options={({ navigation }) => ({
                         drawerLabel: 'Vagas de estágio',
-                        title: ''
-                    }}
+                        title: '',
+                        header: () => (<Header variant={1} navigation={navigation} />)
+                    })}
                 />
                 <Drawer.Screen
                     name='agenda/index'
-                    options={{
+                    options={({ navigation }) => ({
                         drawerLabel: 'Agendar reuniões',
-                        title: ''
-                    }}
+                        title: '',
+                        header: () => (<Header variant={1} navigation={navigation} />)
+                    })}
                 />
 
                 {/* Páginas que não deverão aparecer no menu: */}
                 <Drawer.Screen
                     name='requisicoes/[id]'
-                    options={{
+                    options={({ navigation }) => ({
                         drawerItemStyle: {
                             display: 'none'
-                        }
-                    }}
+                        },
+                        header: () => (<Header variant={1} navigation={navigation} />)
+                    })}
                 />
                 <Drawer.Screen
                     name='vagas/[id]'
-                    options={{
+                    options={({ navigation }) => ({
                         drawerItemStyle: {
                             display: 'none'
-                        }
-                    }}
+                        },
+                        header: () => (<Header variant={1} navigation={navigation} />)
+                    })}
                 />
             </Drawer>
-        </GestureHandlerRootView>
+        </GestureHandlerRootView >
     );
 }

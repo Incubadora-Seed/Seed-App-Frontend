@@ -1,11 +1,10 @@
 import { View, TouchableOpacity } from 'react-native';
-import { Link } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
-export default function ButtonReturn({ path, style }) {
+export default function ButtonMenu({ onPress, style }) {
     return (
         <View style={style}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onPress}>
                 <Ionicons name='menu-outline' size={40} color='black' />
             </TouchableOpacity>
         </View>

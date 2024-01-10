@@ -1,5 +1,4 @@
 import { View, ScrollView, Text, TouchableOpacity } from 'react-native';
-import Header from '../../../components/Header';
 import CardVaga from '../../../components/CardVaga';
 import { Link } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -29,7 +28,6 @@ export default function ListaVagas() {
 
     return (
         <ScrollView>
-            <Header variant={1} />
             <View style={styles.viewContainer}>
                 <Text style={styles.txtTitulo}>Vagas</Text>
                 {empresa && (

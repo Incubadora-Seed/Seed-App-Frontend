@@ -1,6 +1,5 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
 import CardRequisicao from '../../../components/CardRequisicao';
-import Header from '../../../components/Header';
 import { Ionicons } from '@expo/vector-icons';
 import styles from '../../../styles/Requisicoes';
 import { Link } from 'expo-router';
@@ -35,7 +34,6 @@ export default function ListaRequisicoes() {
 
     return (
         <ScrollView>
-            <Header variant={1} />
             <View style={styles.viewContainer}>
                 <Text style={styles.txtTitulo}>Requisições</Text>
                 {empresa && (

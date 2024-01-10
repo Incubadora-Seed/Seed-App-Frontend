@@ -1,6 +1,5 @@
 import { View, Text, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import Header from '../../../components/Header';
 import { Ionicons } from '@expo/vector-icons';
 import styles from '../../../styles/Vaga';
 
@@ -9,7 +8,6 @@ import styles from '../../../styles/Vaga';
 export default function Vaga() {
     return (
         <ScrollView>
-            <Header variant={1} />
             <View style={styles.viewMain}>
                 <Text style={styles.titulo}>Programador Junior</Text>
                 <View style={styles.viewEmpresa}>
