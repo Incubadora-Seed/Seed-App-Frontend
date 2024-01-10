@@ -61,6 +61,22 @@ export default function Layout() {
                     })}
                 />
 
+                <Drawer.Screen
+                    name='autenticacao/cadastro'
+                    options={{
+                        drawerLabel: 'Cadastro',
+                        title: ''
+                    }}
+                />
+
+                <Drawer.Screen
+                    name='perfil/index'
+                    options={{
+                        drawerLabel: 'Sua conta',
+                        title: ''
+                    }}
+                />
+
                 {/* Páginas que não deverão aparecer no menu: */}
                 <Drawer.Screen
                     name='requisicoes/[id]'
