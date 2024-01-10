@@ -16,6 +16,7 @@ export default styles = StyleSheet.create({
     "imgEmpresa": {
         width: 50,
         height: 50,
+        "borderRadius": 50
     },
     "txtEmpresa": {
         "marginLeft": 15,
@@ -33,14 +34,25 @@ export default styles = StyleSheet.create({
         "flexDirection": "row"
     },
     "txtIcons": {
-        "fontFamily": "Poppins_400Regular",
+        "fontFamily": "Poppins_300Light",
         "marginLeft": 3,
-        "fontSize": 13
+        "fontSize": 13,
+        "alignItems": "center",
     },
     "descricao": {
         "fontFamily": "Poppins_600SemiBold",
         "fontSize": 20,
         "marginVertical": 5
     },
+    "descSubtitulo": {
+        "fontFamily": "Poppins_500Medium",
+        "fontSize": 16,
+        "marginVertical": 5
+    },
+    "descItens": {
+        "fontFamily": "Poppins_400Regular",
+        "fontSize": 14,
+        "marginVertical": 2.5,
+    }
     
 });
