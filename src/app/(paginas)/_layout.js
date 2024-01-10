@@ -69,10 +69,11 @@ export default function Layout() {
                 />
                 <Drawer.Screen
                     name='perfil/index'
-                    options={{
+                    options={({ navigation }) => ({
                         drawerLabel: 'Sua conta',
-                        title: ''
-                    }}
+                        title: '',
+                        header: () => (<Header variant={1} navigation={navigation} />)
+                    })}
                 />
 
                 {/* Páginas que não deverão aparecer no menu: */}
