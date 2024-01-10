@@ -37,17 +37,17 @@ export default function Vaga() {
                 <View>
                     <Text style={styles.descricao}>Descrição da vaga:</Text>
                     <Text style={styles.descSubtitulo}>Principais atividades:</Text>
-                    <View>
+                    <View style={styles.viewItens}>
                         <Text style={styles.descItens}>{'\u2022'} Auxiliar programadores nas diferentes rotinas de desenvolvimento</Text>
                         <Text style={styles.descItens}>{'\u2022'} Contribuir com a manutenção e melhorias de sistemas</Text>
-                        <Text style={styles.descItens}> {'\u2022'} Programar e ajudar na elaboração de softwares, sistemas, sites, aplicativos e soluções para web</Text>
-                        <Text style={styles.descItens}> {'\u2022'} Prestar auxílio na identificação e solução de incidentes</Text>
+                        <Text style={styles.descItens}>{'\u2022'} Programar e ajudar na elaboração de softwares, sites, aplicativos e soluções para web</Text>
+                        <Text style={styles.descItens}>{'\u2022'} Prestar auxílio na identificação e solução de incidentes</Text>
                     </View>
                     <Text style={styles.descSubtitulo}>Requisitos essencias:</Text>
-                    <View>
+                    <View style={styles.viewItens}>
                         <Text style={styles.descItens}>{'\u2022'} Experiência com C# .net</Text>
                         <Text style={styles.descItens}>{'\u2022'} Noções de javascript, , angular ou outro ui framework</Text>
-                        <Text style={styles.descItens}> {'\u2022'} Conhecimento teórico e prático de bancos de dados relacionais e linguagem sql</Text>
+                        <Text style={styles.descItens}>{'\u2022'} Conhecimento teórico e prático de bancos de dados relacionais e linguagem sql</Text>
                         <Text style={styles.descItens}> {'\u2022'} Capacidade de aprendizado rápido</Text>
                     </View>
 
