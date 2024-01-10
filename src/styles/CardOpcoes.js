@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 
 export default styles = StyleSheet.create({
     viewMain: {
-        width: '90%',
+        width: '100%',
     },
     elevation: {
         elevation: 4,
@@ -30,17 +30,17 @@ export default styles = StyleSheet.create({
     },
     titulo: {
         fontSize: 20,
-        lineHeight: 30,
         color: '#212529',
-        fontWeight: 'bold',
-        paddingVertical: 10
+        fontFamily: 'Poppins_600SemiBold',
+        lineHeight: 30,
+        paddingTop: 14
     },
     descricao: {
         fontSize: 16,
         lineHeight: 22,
         color: '#68717A',
         textAlign: 'center',
-        paddingVertical: 10
+        paddingVertical: 10,
+        fontFamily: 'Poppins_400Regular',
     },
-    
 });

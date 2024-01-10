@@ -1,9 +1,9 @@
 import { View, ScrollView, Text, TouchableOpacity } from 'react-native';
-import Header from '../../components/Header';
-import CardVaga from '../../components/CardVaga';
+import Header from '../../../components/Header';
+import CardVaga from '../../../components/CardVaga';
 import { Link } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import styles from '../../styles/Vagas';
+import styles from '../../../styles/Vagas';
 
 // Tela: https://www.figma.com/file/f2Vsc2XnqkxnL9iYGbFvXz/APP-SEED?type=design&node-id=126-129&mode=design&t=3poWcNGhVOhOVgnn-4
 

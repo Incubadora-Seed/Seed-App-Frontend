@@ -1,9 +1,9 @@
 import { View, ScrollView, Text } from 'react-native';
-import Header from '../../components/Header';
-import TagCategoria from '../../components/TagCategoria';
-import ResumoEmpresa from '../../components/ResumoEmpresa';
-import ButtonLong from '../../components/ButtonLong';
-import styles from '../../styles/Requisicao';
+import Header from '../../../components/Header';
+import TagCategoria from '../../../components/TagCategoria';
+import ResumoEmpresa from '../../../components/ResumoEmpresa';
+import ButtonLong from '../../../components/ButtonLong';
+import styles from '../../../styles/Requisicao';
 import { Link } from 'expo-router';
 
 // Tela: https://www.figma.com/file/f2Vsc2XnqkxnL9iYGbFvXz/APP-SEED?type=design&node-id=205-109&mode=design&t=7Z4ya2SoQs9gZYbV-4
