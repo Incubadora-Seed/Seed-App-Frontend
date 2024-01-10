@@ -1,8 +1,8 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import CardRequisicao from '../../components/CardRequisicao';
-import Header from '../../components/Header';
+import CardRequisicao from '../../../components/CardRequisicao';
+import Header from '../../../components/Header';
 import { Ionicons } from '@expo/vector-icons';
-import styles from '../../styles/Requisicoes';
+import styles from '../../../styles/Requisicoes';
 import { Link } from 'expo-router';
 
 // Tela: https://www.figma.com/file/f2Vsc2XnqkxnL9iYGbFvXz/APP-SEED?type=design&node-id=123-41&mode=design&t=7Z4ya2SoQs9gZYbV-4
