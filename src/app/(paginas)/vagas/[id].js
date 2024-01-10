@@ -1,8 +1,8 @@
 import { View, Text, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import Header from '../../components/Header';
+import Header from '../../../components/Header';
 import { Ionicons } from '@expo/vector-icons';
-import styles from '../../styles/Vaga';
+import styles from '../../../styles/Vaga';
 
 // Tela: ...
 
@@ -13,7 +13,7 @@ export default function Vaga() {
             <View style={styles.viewMain}>
                 <Text style={styles.titulo}>Programador Junior</Text>
                 <View style={styles.viewEmpresa}>
-                    <Image source={require('../../../assets/imgs/logo1.jpg')} style={styles.imgEmpresa} />
+                    <Image source={require('../../../../assets/imgs/logo1.jpg')} style={styles.imgEmpresa} />
                     <View style={styles.txtEmpresa}>
                         <Text>Empresa Tal Tal</Text>
                         <Text>Sapiranga, Rio Grande do Sul, Brasil</Text>
