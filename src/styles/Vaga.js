@@ -61,5 +61,4 @@ export default styles = StyleSheet.create({
     btnCandidatar: {
         marginVertical: 10
     }
-    
 });
