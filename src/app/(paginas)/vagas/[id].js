@@ -50,7 +50,7 @@ export default function Vaga() {
                     </View>
 
                 </View>
-                <ButtonLong text="Candidatar-se" />
+                <ButtonLong style={styles.btnCandidatar}  text="Candidatar-se" />
             </View>
         </ScrollView>
     )

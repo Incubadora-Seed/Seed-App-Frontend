@@ -39,7 +39,7 @@ export default function Perfil() {
 
                 <View style={Styles.sessionInfos}>
                     <View style={Styles.viewInfos}>
-                        <Ionicons name="book-outline" size={24} color="black" />
+                        <Ionicons name="school-outline" size={24} color="black" />
                         <Text style={Styles.txtInfos}>Informática, 4º ano, manhã</Text>
                     </View>
                     <View style={Styles.viewInfos}>

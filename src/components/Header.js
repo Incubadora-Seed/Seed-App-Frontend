@@ -15,6 +15,7 @@ import { Link } from 'expo-router';
 //   2 - Perfil e Menu
 
 export default function Header({ variant, style, navigation }) {
+    
     return (
         <View style={[styles.viewMain, style]}>
             {variant === 1 && <ButtonReturn onPress={navigation.goBack} />}

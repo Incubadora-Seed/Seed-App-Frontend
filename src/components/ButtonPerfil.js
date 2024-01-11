@@ -5,7 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 export default function ButtonPerfil({ onPress, style }) {
     return (
         <View style={style}>
-            <Link href={'#'} asChild>
+            <Link href={'/perfil'} asChild>
                 <TouchableOpacity onPress={onPress}>
                     <Ionicons name='person-outline' size={35} color='black' />
                 </TouchableOpacity>

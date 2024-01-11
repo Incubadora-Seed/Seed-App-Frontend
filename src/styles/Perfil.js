@@ -24,7 +24,7 @@ export default styles = StyleSheet.create({
         marginRight: 10
     },
     sessionInfos: {
-        marginVertical: 10
+        padding: 20,
     },
     viewInfos: {
         flexDirection: "row",
@@ -37,7 +37,7 @@ export default styles = StyleSheet.create({
         marginLeft: 15
     },
     txtSubtitulo: {
-        fontSize: 30,
+        fontSize: 27,
         fontFamily: "Poppins_400Regular",
         marginBottom: 10,
         textAlign: "center"

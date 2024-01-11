@@ -25,6 +25,7 @@ export default styles = StyleSheet.create({
         fontSize: 16,
         lineHeight: 22,
         color: '#000',
+        textAlign: 'justify',
     },
     btnContato: {
         marginVertical: 25
