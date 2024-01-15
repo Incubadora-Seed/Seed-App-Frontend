@@ -76,6 +76,15 @@ export default function Layout() {
                     })}
                 />
 
+                <Drawer.Screen
+                    name='conversas/index'
+                    options={({ navigation }) => ({
+                        drawerLabel: 'Conversas',
+                        title: '',
+                        header: () => (<Header variant={1} navigation={navigation} />)
+                    })}
+                />
+
                 {/* Páginas que não deverão aparecer no menu: */}
                 <Drawer.Screen
                     name='requisicoes/[id]'
