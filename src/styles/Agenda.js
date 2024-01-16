@@ -22,6 +22,30 @@ export default styles = StyleSheet.create({
         borderRadius: 10,
         paddingVertical: 13,
         backgroundColor: '#FFF',
+        marginBottom: 13,
         elevation: 4,
+    },
+    txtDataSelecionada: {
+        color: '#000',
+        fontFamily: 'Poppins_200ExtraLight',
+        fontSize: 20,
+        lineHeight: 26,
+        marginBottom: 27,
+    },
+    txtHorariosDisponiveis: {
+        color: '#000',
+        fontFamily: 'Poppins_400Regular',
+        fontSize: 24,
+        lineHeight: 34,
+    },
+    viewHorarios: {
+        width: '100%',
+        padding: 15,
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center'
+    },
+    btnAgendar: {
+        marginVertical: 25
     }
 });
