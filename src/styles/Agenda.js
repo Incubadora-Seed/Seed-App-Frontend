@@ -14,7 +14,8 @@ export default styles = StyleSheet.create({
     },
     viewContainerAgenda: {
         width: '100%',
-        paddingHorizontal: 15
+        paddingHorizontal: 15,
+        alignItems: 'center'
     },
     viewAgenda: {
         borderWidth: 1,
