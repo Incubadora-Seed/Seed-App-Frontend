@@ -9,7 +9,7 @@ import styles from '../../../styles/Agenda'
 // Tela: https://www.figma.com/file/f2Vsc2XnqkxnL9iYGbFvXz/APP-SEED?type=design&node-id=180-52&mode=design&t=7Z4ya2SoQs9gZYbV-4
 
 export default function Agenda() {
-    const diasDaSemana = ['Dom.', 'Seg.', 'Ter.', 'Qua.', 'Qui.', 'Sex.', 'Sab.']
+    const diasDaSemana = ['D.', 'S.', 'T.', 'Q.', 'Q.', 'S.', 'S.']
     const mesesDoAno = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
     const opcoesData = { weekday: 'long', day: 'numeric', month: 'long' }
     const formatoData = new Intl.DateTimeFormat('pt-BR', opcoesData)
