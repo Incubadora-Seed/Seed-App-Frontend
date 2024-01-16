@@ -11,7 +11,7 @@ export default function Conversas() {
         usuario: 'Incubadora Seed',
         msg: 'Lorem ipsum dolor sit amet, consectetur.....',
         tempo: '16:40',
-        bg: '#d9d9d9'
+        bg: '#F1F1F1'
     },
     {
         idConversa: 2,
@@ -27,7 +27,7 @@ export default function Conversas() {
         usuario: 'Maria da Silva',
         msg: 'Lorem ipsum dolor sit amet, consectetur.....',
         tempo: 'Ontem',
-        bg: '#d9d9d9'
+        bg: '#F1F1F1'
     },
     {
         idConversa: 4,
@@ -43,24 +43,24 @@ export default function Conversas() {
         usuario: 'Joana da Silva',
         msg: 'Lorem ipsum dolor sit amet, consectetur.....',
         tempo: '14/01',
-        bg: '#d9d9d9'
-        },
-        {
-            idConversa: 6,
-            foto: '',
-            usuario: 'Ana da Silva',
-            msg: 'Lorem ipsum dolor sit amet, consectetur.....',
-            tempo: '14/01',
-            bg: 'white'
-        },
-        {
-            idConversa: 7,
-            foto: '',
-            usuario: 'Pedro da Silva',
-            msg: 'Lorem ipsum dolor sit amet, consectetur.....',
-            tempo: '10/01',
-            bg: '#d9d9d9'
-        }
+        bg: '#F1F1F1'
+    },
+    {
+        idConversa: 6,
+        foto: '',
+        usuario: 'Ana da Silva',
+        msg: 'Lorem ipsum dolor sit amet, consectetur.....',
+        tempo: '14/01',
+        bg: 'white'
+    },
+    {
+        idConversa: 7,
+        foto: '',
+        usuario: 'Pedro da Silva',
+        msg: 'Lorem ipsum dolor sit amet, consectetur.....',
+        tempo: '10/01',
+        bg: '#F1F1F1'
+    }
     ]
 
     return (

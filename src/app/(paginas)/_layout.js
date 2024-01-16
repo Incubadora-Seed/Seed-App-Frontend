@@ -104,6 +104,16 @@ export default function Layout() {
                         header: () => (<Header variant={1} navigation={navigation} />)
                     })}
                 />
+
+                <Drawer.Screen
+                    name='conversas/[id]'
+                    options={({ navigation }) => ({
+                        drawerItemStyle: {
+                            display: 'none'
+                        },
+                        header: () => (<Header variant={1} navigation={navigation} />)
+                    })}
+                />
             </Drawer>
         </GestureHandlerRootView >
     );

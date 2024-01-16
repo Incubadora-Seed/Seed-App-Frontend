@@ -13,7 +13,7 @@ export default styles = StyleSheet.create({
     },
     viewTexto: {
         flex: 1,
-        marginLeft: 10,
+        marginLeft: 15,
         justifyContent: 'center',
     },
     txtUser: {
