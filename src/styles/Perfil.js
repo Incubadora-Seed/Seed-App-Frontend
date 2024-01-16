@@ -8,7 +8,8 @@ export default styles = StyleSheet.create({
     },
     nomeUsusario: {
         fontSize: 32,
-        fontFamily: "Poppins_500Medium"
+        fontFamily: "Poppins_500Medium",
+        lineHeight: 44,
     },
     viewMain: {
         padding: 20
@@ -21,7 +22,8 @@ export default styles = StyleSheet.create({
     txtEditar: {
         fontSize: 24,
         fontFamily: "Poppins_500Medium",
-        marginRight: 10
+        marginRight: 10,
+        lineHeight: 33,
     },
     sessionInfos: {
         padding: 20,
@@ -34,12 +36,15 @@ export default styles = StyleSheet.create({
     txtInfos: {
         fontSize: 20,
         fontFamily: "Poppins_300Light",
-        marginLeft: 15
+        marginLeft: 15,
+        lineHeight: 27,
     },
     txtSubtitulo: {
         fontSize: 27,
         fontFamily: "Poppins_400Regular",
         marginBottom: 10,
-        textAlign: "center"
+        textAlign: "center",
+        lineHeight: 37,
+        marginBottom: 20
     }
 })

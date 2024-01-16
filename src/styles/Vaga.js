@@ -7,11 +7,14 @@ export default styles = StyleSheet.create({
     titulo: {
         fontSize: 32,
         fontFamily:"Poppins_600SemiBold",
-        textAlign: "center"
+        textAlign: "center",
+        lineHeight: 44,
+        marginVertical: 10
     },
     viewEmpresa: {
-        "flexDirection": "row",
-        "alignItems": "center"
+        flexDirection: "row",
+        alignItems: "center",
+        marginVertical: 5
     },
     imgEmpresa: {
         width: 50,
@@ -21,7 +24,8 @@ export default styles = StyleSheet.create({
     txtEmpresa: {
         marginLeft: 15,
         fontFamily: "Poppins_400Regular",
-        fontSize: 20
+        fontSize: 20,
+        lineHeight: 27,
     },
     viewIcons: {
         flexDirection: "row",
@@ -38,16 +42,21 @@ export default styles = StyleSheet.create({
         marginLeft: 3,
         fontSize: 13,
         alignItems: "center",
+        lineHeight: 18,
     },
     descricao: {
         fontFamily: "Poppins_600SemiBold",
         fontSize: 20,
-        marginVertical: 5
+        marginVertical: 5,
+        lineHeight: 27,
+        marginVertical: 10
     },
     descSubtitulo: {
         fontFamily: "Poppins_500Medium",
         fontSize: 16,
-        marginVertical: 5
+        marginVertical: 5,
+        lineHeight: 22,
+        marginVertical: 10
     },
     viewItens: {
         paddingHorizontal: 10
@@ -57,6 +66,8 @@ export default styles = StyleSheet.create({
         fontSize: 14,
         marginVertical: 2.5,
         textAlign: "justify",
+        lineHeight: 19,
+        marginBottom: 5
     },
     btnCandidatar: {
         marginVertical: 10
