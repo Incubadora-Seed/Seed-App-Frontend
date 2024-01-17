@@ -60,19 +60,13 @@ export default function Layout() {
                         header: () => (<Header variant={1} navigation={navigation} />)
                     })}
                 />
-                <Drawer.Screen
-                    name='autenticacao/cadastro'
-                    options={{
-                        drawerLabel: 'Cadastro',
-                        title: ''
-                    }}
-                />
+
                 <Drawer.Screen
                     name='perfil/index'
                     options={({ navigation }) => ({
                         drawerLabel: 'Sua conta',
                         title: '',
-                        header: () => (<Header variant={1} navigation={navigation} style={{backgroundColor:'#4D4DFF'} } />)
+                        header: () => (<Header variant={1} navigation={navigation} style={{ backgroundColor: '#4D4DFF' }} />)
                     })}
                 />
 
@@ -108,12 +102,31 @@ export default function Layout() {
                 <Drawer.Screen
                     name='conversas/[id]'
                     options={({ navigation }) => ({
-                        drawerItemStyle: {
-                            display: 'none'
-                        },
-                        header: () => (<Header variant={1} navigation={navigation} style={{backgroundColor:'#D9D9D9'} } />)
+                        drawerLabel: 'conversas/[id]',
+                        title: '',
+                        header: () => (<Header variant={1} navigation={navigation} style={{ backgroundColor: '#D9D9D9' }} />)
                     })}
                 />
+
+                <Drawer.Screen
+                    name='autenticacao/cadastro'
+                    options={{
+                        drawerLabel: 'Cadastro',
+                        title: '',
+                        headerShown: false
+                    }}
+                />
+
+                <Drawer.Screen
+                    name='autenticacao/login'
+                    options={{
+                        drawerLabel: 'Login',
+                        title: '',
+                        headerShown: false
+                    }}
+                />
+
+
             </Drawer>
         </GestureHandlerRootView >
     );
