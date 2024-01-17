@@ -20,7 +20,7 @@ export default function Header({ variant, style, navigation, title }) {
         <View style={[styles.viewMain, style]}>
             {variant === 1 && <ButtonReturn onPress={navigation.goBack} />}
             {variant === 2 && <ButtonPerfil />}
-            {title && <Text style={styles.txtTitulo}>{title}</Text>}
+            {title && <Text style={styles.txtNome}>{title}</Text>}
             <ButtonMenu onPress={navigation.toggleDrawer} />
         </View>
     )

@@ -1,7 +1,11 @@
 import { useNavigation } from 'expo-router/src/useNavigation';
 import { useEffect } from 'react';
 import Header from '../../../components/Header';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { Ionicons } from '@expo/vector-icons';
+import Input from '../../../components/Input';
+import Styles from '../../../styles/Conversa';
 
 export default function Chat() {
     const navigation = useNavigation()
@@ -16,7 +20,26 @@ export default function Chat() {
 
     return (
         <View>
-            <Text>Chat</Text>
+            <ScrollView style={Styles.viewMensagens}>
+                <View style={Styles.viewMsg}>
+                    <Text style={Styles.txtConteudo}>
+                        teste 1
+                    </Text>
+                    <Text style={Styles.txtTempo}>
+                        19:40
+                    </Text>
+                </View>
+            </ScrollView>
+
+            <View style={Styles.viewDigitar}>
+                <TouchableOpacity>
+                    <Ionicons name="add-circle-outline" size={30} color='#000' />
+                </TouchableOpacity>
+                <Input placeholder="Mensagem" style={{ width: '70%' }} styleIcon={{ display: 'none' }} />
+                <TouchableOpacity>
+                    <Ionicons name="send-outline" size={30} color='#000' />
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
