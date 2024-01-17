@@ -3,18 +3,21 @@ import { StyleSheet } from 'react-native';
 export default styles = StyleSheet.create({
     viewTopo: {
         backgroundColor: "#4D4DFF",
-        paddingVertical: 15,
+        padding: 15,
         alignItems: "center"
     },
     nomeUsusario: {
         fontSize: 32,
         fontFamily: "Poppins_500Medium",
         lineHeight: 44,
+        textAlign: 'center'
     },
     viewMain: {
-        padding: 20
+        paddingVertical: 20,
+        paddingHorizontal: 15
     },
     viewEditar: {
+        width: '100%',
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
@@ -25,7 +28,7 @@ export default styles = StyleSheet.create({
         marginRight: 10,
         lineHeight: 33,
     },
-    sessionInfos: {
+    viewContainerInfos: {
         padding: 20,
     },
     viewInfos: {
@@ -35,16 +38,22 @@ export default styles = StyleSheet.create({
     },
     txtInfos: {
         fontSize: 20,
-        fontFamily: "Poppins_300Light",
+        fontFamily: "Poppins_400Regular",
         marginLeft: 15,
         lineHeight: 27,
     },
     txtSubtitulo: {
         fontSize: 27,
-        fontFamily: "Poppins_400Regular",
+        fontFamily: "Poppins_500Medium",
         marginBottom: 10,
         textAlign: "center",
         lineHeight: 37,
         marginBottom: 20
+    },
+    viewVagas: {
+        width: '100%'
+    },
+    viewRequisicoes: {
+        width: '100%'
     }
 })

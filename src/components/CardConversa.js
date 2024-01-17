@@ -1,23 +1,26 @@
 import { View, Text, Image, ImageBackground } from 'react-native';
-import Styles from '../styles/CardConversa';
+import styles from '../styles/CardConversa';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Link } from 'expo-router';
 
 export default function CardConversa({ foto, usuario, msg, tempo, idConversa, bg }) {
     return (
-        <TouchableOpacity>
-            <Link href={`/conversas/${idConversa}`}>
-            <View style={[Styles.viewContainer, { backgroundColor: bg }]}>
-                <Image style={Styles.img} />
-                <View style={Styles.viewTexto}>
-                    <Text style={Styles.txtUser}>{usuario}</Text>
-                    <Text style={Styles.txtMsg}>{msg}</Text>
+
+        <Link href={`/conversas/${idConversa}`} asChild style={{ backgroundColor: bg }}>
+            <TouchableOpacity>
+                <View style={styles.viewContainer}>
+                    <Image style={styles.img} />
+                    <View style={styles.viewDireita}>
+                        <View style={styles.viewCima}>
+                            <Text style={styles.txtUser} numberOfLines={1}>{usuario}</Text>
+                            <Text style={styles.txtTempo}>{tempo}</Text>
+                        </View>
+                        <View>
+                            <Text style={styles.txtMsg} numberOfLines={1}>{msg}</Text>
+                        </View>
+                    </View>
                 </View>
-                <View>
-                    <Text style={Styles.txtTempo}>{tempo}</Text>
-                </View>
-                </View>
-            </Link>
-        </TouchableOpacity>
+            </TouchableOpacity>
+        </Link >
     )
 }

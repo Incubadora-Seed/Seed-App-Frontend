@@ -1,56 +1,73 @@
 import { View, Text, Image } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Ionicons } from '@expo/vector-icons';
-import styles from '../../../styles/Vaga';
 import ButtonLong from '../../../components/ButtonLong';
+import ResumoEmpresa from '../../../components/ResumoEmpresa';
+import { useState, useEffect } from 'react';
+import styles from '../../../styles/Vaga';
 
 // Tela: ...
 
 export default function Vaga() {
+    var [data, setData] = useState(undefined)
+
+    function calcularData(dataCriacao) {
+        var d1 = dataCriacao
+        var d2 = new Date()
+
+        var diffInMs = d2 - (new Date(d1))
+        var diffInDays = diffInMs / (1000 * 60 * 60 * 24)
+        setData(Math.trunc(diffInDays))
+    }
+
+    useEffect(() => {
+        calcularData(fetchData.dataCriacao)
+    }, [])
+
+    // Variáveis temporárias de teste:
+    var fetchData = {
+        titulo: 'Programador Junior',
+        dataCriacao: '2024-01-16',
+        remuneracao: '700,00',
+        cargo: 'Estágiario',
+        descricao: `Principais atividades:
+    \u2022 Auxiliar programadores nas diferentes rotinas de desenvolvimento
+    \u2022 Contribuir com a manutenção e melhorias de sistemas
+    \u2022 Programar e ajudar na elaboração de softwares, sites, aplicativos e soluções para web
+    \u2022 Prestar auxílio na identificação e solução de incidentes
+
+Requisitos Essenciais:
+    \u2022 Experiência com C# .net
+    \u2022 Noções de javascript, angular ou outro ui framework
+    \u2022 Conhecimento teórico e prático de bancos de dados relacionais e linguagem sql
+    \u2022 Capacidade de aprendizado rápido`
+    }
+
     return (
         <ScrollView>
             <View style={styles.viewMain}>
-                <Text style={styles.titulo}>Programador Junior</Text>
-                <View style={styles.viewEmpresa}>
-                    <Image source={require('../../../../assets/imgs/logo1.jpg')} style={styles.imgEmpresa} />
-                    <View style={styles.txtEmpresa}>
-                        <Text>Empresa Tal Tal</Text>
-                        <Text>Sapiranga, Rio Grande do Sul, Brasil</Text>
-                    </View>
-                </View>
+                <Text style={styles.titulo}>{fetchData.titulo}</Text>
+                <ResumoEmpresa style={{ marginVertical: 5 }} />
                 <View style={styles.viewIcons}>
                     <View style={styles.blocosIcons}>
                         <Ionicons name="time-outline" size={20} color='#000' />
-                        <Text style={styles.txtIcons}>há 6 dias</Text>
+                        <Text style={styles.txtIcons}>há {data} dias</Text>
                     </View>
                     <View style={styles.blocosIcons}>
                         <Ionicons name="cash-outline" size={20} color='#000' />
-                        <Text style={styles.txtIcons}>R$ 700,00</Text>
+                        <Text style={styles.txtIcons}>R$ {fetchData.remuneracao}</Text>
                     </View>
                     <View style={styles.blocosIcons}>
-                        <Ionicons name="bag-outline" size={20} color="black" />
-                        <Text style={styles.txtIcons}>Estagiário</Text>
+                        <Ionicons name="basket-outline" size={20} color="black" />
+                        <Text style={styles.txtIcons}>{fetchData.cargo}</Text>
                     </View>
                 </View>
                 <View>
-                    <Text style={styles.descricao}>Descrição da vaga:</Text>
-                    <Text style={styles.descSubtitulo}>Principais atividades:</Text>
-                    <View style={styles.viewItens}>
-                        <Text style={styles.descItens}>{'\u2022'} Auxiliar programadores nas diferentes rotinas de desenvolvimento</Text>
-                        <Text style={styles.descItens}>{'\u2022'} Contribuir com a manutenção e melhorias de sistemas</Text>
-                        <Text style={styles.descItens}>{'\u2022'} Programar e ajudar na elaboração de softwares, sites, aplicativos e soluções para web</Text>
-                        <Text style={styles.descItens}>{'\u2022'} Prestar auxílio na identificação e solução de incidentes</Text>
-                    </View>
-                    <Text style={styles.descSubtitulo}>Requisitos essencias:</Text>
-                    <View style={styles.viewItens}>
-                        <Text style={styles.descItens}>{'\u2022'} Experiência com C# .net</Text>
-                        <Text style={styles.descItens}>{'\u2022'} Noções de javascript, , angular ou outro ui framework</Text>
-                        <Text style={styles.descItens}>{'\u2022'} Conhecimento teórico e prático de bancos de dados relacionais e linguagem sql</Text>
-                        <Text style={styles.descItens}> {'\u2022'} Capacidade de aprendizado rápido</Text>
-                    </View>
+                    <Text style={styles.txtDescricaoTitulo}>Descrição da vaga:</Text>
+                    <Text style={styles.descItensZZ}>{fetchData.descricao}</Text>
 
                 </View>
-                <ButtonLong style={styles.btnCandidatar}  text="Candidatar-se" />
+                <ButtonLong style={styles.btnCandidatar} text="Candidatar-se" />
             </View>
         </ScrollView>
     )
