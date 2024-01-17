@@ -7,20 +7,30 @@ export default styles = StyleSheet.create({
     },
     viewMsg: {
         padding: 10,
-        backgroundColor: '#D9D9D9',
-        borderRadius: 15
+        borderRadius: 15,
+        marginBottom: 10,
+    },
+    viewMsgEnviada: {
+        alignSelf: 'flex-end',
+        backgroundColor: '#4D4DFF',
+    },
+    viewMsgRecebida: {
+        alignSelf: 'flex-start',
+        backgroundColor: '#D9D9D9'
     },
     txtConteudo: {
         fontSize: 20,
-        width: '90%',
         fontFamily: 'Poppins_300Light',
-        lineHeight: 25
+        lineHeight: 25,
+        textAlign: 'justify',
+        maxWidth: '90%',
+        minWidth: '30%',
     },
     txtTempo: {
-        fontSize: 14,
+        fontSize: 16,
         textAlign: 'right',
         fontFamily: 'Poppins_200ExtraLight',
-        lineHeight: 15
+        lineHeight: 20,
     },
     viewDigitar: {
         flexDirection: 'row',
@@ -28,6 +38,6 @@ export default styles = StyleSheet.create({
         justifyContent: 'space-between',
         padding: 10,
         backgroundColor: '#D9D9D9',
-        height: '10%'
+        height: '10%',
     }
 });

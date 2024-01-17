@@ -18,17 +18,59 @@ export default function Chat() {
         })
     })
 
+    var fetchData = [
+        {
+            conteudo: 'teste 1',
+            tempo: 'Ontem',
+            enviado: true
+        },
+        {
+            conteudo: 'teste 2',
+            tempo: '19:40',
+            enviado: false
+        },
+        {
+            conteudo: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum placerat ipsum non elit consectetur tristique. Nulla facilisi. Vestibulum ac elementum orci, quis vulputate lorem. Aliquam erat volutpat. Nulla ex odio, sagittis ut nibh a, rhoncus luctus massa. Donec sit amet sollicitudin ipsum, quis dignissim era',
+            tempo: '19:40',
+            enviado: true
+        },
+        {
+            conteudo: 'teste 1',
+            tempo: '19:40',
+            enviado: true
+        },
+        {
+            conteudo: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum placerat ipsum non elit consectetur tristique. Nulla facilisi. Vestibulum ac elementum orci, quis vulputate lorem. Aliquam erat volutpat. Nulla ex odio, sagittis ut nibh a, rhoncus luctus massa. Donec sit amet sollicitudin ipsum, quis dignissim era',
+            tempo: '19:40',
+            enviado: false
+        },
+
+    ]
+
+    const styleMensagem = (enviado) => {
+        if (enviado) {
+            return Styles.viewMsgEnviada
+        }
+        else {
+            return Styles.viewMsgRecebida
+        }
+    }
+
     return (
         <View>
             <ScrollView style={Styles.viewMensagens}>
-                <View style={Styles.viewMsg}>
-                    <Text style={Styles.txtConteudo}>
-                        teste 1
-                    </Text>
-                    <Text style={Styles.txtTempo}>
-                        19:40
-                    </Text>
-                </View>
+                {fetchData && (
+                    fetchData.map((item, index) => (
+                        <View style={[Styles.viewMsg, styleMensagem(item.enviado)]} key={index}>
+                            <Text style={Styles.txtConteudo}>
+                                {item.conteudo}
+                            </Text>
+                            <Text style={Styles.txtTempo}>
+                                {item.tempo}
+                            </Text>
+                        </View>
+                    ))
+                )}
             </ScrollView>
 
             <View style={Styles.viewDigitar}>
