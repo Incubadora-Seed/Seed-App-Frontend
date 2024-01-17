@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 export default function CardVaga({ titulo, empresa, endereco, dataCriacao, style, idVaga, idEmpresa }) {
     var [data, setData] = useState(undefined)
 
-    function calcularData() {
+    function calcularData(dataCriacao) {
         var d1 = dataCriacao
         var d2 = new Date()
 

@@ -2,7 +2,8 @@ import { StyleSheet } from 'react-native';
 
 export default styles = StyleSheet.create({
     viewMain: {
-        padding: 10
+        paddingVertical: 10,
+        paddingHorizontal: 15
     },
     titulo: {
         fontSize: 32,
@@ -10,11 +11,6 @@ export default styles = StyleSheet.create({
         textAlign: "center",
         lineHeight: 44,
         marginVertical: 10
-    },
-    viewEmpresa: {
-        flexDirection: "row",
-        alignItems: "center",
-        marginVertical: 5
     },
     imgEmpresa: {
         width: 50,
@@ -29,7 +25,7 @@ export default styles = StyleSheet.create({
     },
     viewIcons: {
         flexDirection: "row",
-        width: "75%",
+        width: "85%",
         justifyContent: "space-between",
         marginVertical: 10,
     },
@@ -44,14 +40,14 @@ export default styles = StyleSheet.create({
         alignItems: "center",
         lineHeight: 18,
     },
-    descricao: {
+    txtDescricaoTitulo: {
         fontFamily: "Poppins_600SemiBold",
         fontSize: 20,
         marginVertical: 5,
         lineHeight: 27,
         marginVertical: 10
     },
-    descSubtitulo: {
+    txtDescricaoSubtitulo: {
         fontFamily: "Poppins_500Medium",
         fontSize: 16,
         marginVertical: 5,
@@ -64,12 +60,10 @@ export default styles = StyleSheet.create({
     descItens: {
         fontFamily: "Poppins_400Regular",
         fontSize: 14,
-        marginVertical: 2.5,
-        textAlign: "justify",
         lineHeight: 19,
         marginBottom: 5
     },
     btnCandidatar: {
-        marginVertical: 10
+        marginVertical: 25
     }
 });

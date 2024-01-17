@@ -1,65 +1,78 @@
-import { View, Text } from "@bacons/react-views";
-import { ScrollView } from "react-native-gesture-handler";
+import { View, ScrollView, Text } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import Styles from '../../../styles/Perfil';
+import styles from '../../../styles/Perfil';
 import CardVaga from "../../../components/CardVaga";
 import CardRequisicao from "../../../components/CardRequisicao";
 import { TouchableOpacity } from "react-native";
 
 export default function Perfil() {
 
-    var fetchData = [{
-        titulo: 'Programador Junior',
-        empresa: 'Empresa Teste Teste',
-        endereco: 'Sapiranga, RS, Brasil',
-        dataCriacao: '2024-01-01',
-        idVaga: '312'
-    }, {
-        titulo: 'Programador Senior',
-        empresa: 'Empresa Teste2',
-        endereco: 'Novo Hamburgo, RS, Brasil',
-        dataCriacao: '2023-12-25',
-        idVaga: '42'
-    }]
+    var fetchData = {
+        nome: 'Carlos Julio Andrade da Cunha',
+        curso: 'Informática',
+        anoCurso: '4',
+        turnoCurso: 'manhã',
+        email: 'fulanodetal@email.com',
+        telefone: '(99) 99999-9999',
+        nascimento: '12/04/2005',
+        vagas: [{
+            titulo: 'Programador Junior',
+            empresa: 'Empresa Teste Teste',
+            endereco: 'Sapiranga, RS, Brasil',
+            dataCriacao: '2024-01-01',
+            idVaga: '312'
+        }, {
+            titulo: 'Programador Senior',
+            empresa: 'Empresa Teste2',
+            endereco: 'Novo Hamburgo, RS, Brasil',
+            dataCriacao: '2023-12-25',
+            idVaga: '42'
+        }],
+        requisicoes: [{
+            titulo: 'Atualizar SO para Windows 11 nos PCs da empresa',
+            descricao: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem ....',
+            prazo: '23/12',
+            categoria: 'Suporte Técnico'
+        }]
+    }
 
     return (
         <ScrollView>
-            <View style={Styles.viewTopo}>
+            <View style={styles.viewTopo}>
                 <Ionicons name="person-circle-outline" size={100} color="black" />
-                <Text style={Styles.nomeUsusario}>Nome de usuário</Text>
+                <Text style={styles.nomeUsusario}>{fetchData.nome}</Text>
             </View>
-            <View style={Styles.viewMain}>
+            <View style={styles.viewMain}>
                 <TouchableOpacity>
-                    <View style={Styles.viewEditar}>
-                        <Text style={Styles.txtEditar}>Editar perfil</Text>
+                    <View style={styles.viewEditar}>
+                        <Text style={styles.txtEditar}>Editar perfil</Text>
                         <Ionicons name="pencil-sharp" size={25} color="black" />
                     </View>
                 </TouchableOpacity>
 
-
-                <View style={Styles.sessionInfos}>
-                    <View style={Styles.viewInfos}>
+                <View style={styles.viewContainerInfos}>
+                    <View style={styles.viewInfos}>
                         <Ionicons name="school-outline" size={24} color="black" />
-                        <Text style={Styles.txtInfos}>Informática, 4º ano, manhã</Text>
+                        <Text style={styles.txtInfos}>{`${fetchData.curso}, ${fetchData.anoCurso}º ano, ${fetchData.turnoCurso}`}</Text>
                     </View>
-                    <View style={Styles.viewInfos}>
+                    <View style={styles.viewInfos}>
                         <Ionicons name="at-outline" size={24} color="black" />
-                        <Text style={Styles.txtInfos}>fulanodetal@email.com</Text>
+                        <Text style={styles.txtInfos}>{fetchData.email}</Text>
                     </View>
-                    <View style={Styles.viewInfos}>
+                    <View style={styles.viewInfos}>
                         <Ionicons name="call-outline" size={24} color="black" />
-                        <Text style={Styles.txtInfos}>(99) 99999-9999</Text>
+                        <Text style={styles.txtInfos}>{fetchData.telefone}</Text>
                     </View>
-                    <View style={Styles.viewInfos}>
+                    <View style={styles.viewInfos}>
                         <Ionicons name="calendar-outline" size={24} color="black" />
-                        <Text style={Styles.txtInfos}>dd/mm/aaaa</Text>
+                        <Text style={styles.txtInfos}>{fetchData.nascimento}</Text>
                     </View>
                 </View>
 
-                <View>
-                    <Text style={Styles.txtSubtitulo}>Vagas candidatadas</Text>
+                <View style={styles.viewVagas}>
+                    <Text style={styles.txtSubtitulo}>Vagas candidatadas</Text>
                     {fetchData && (
-                        fetchData.map((item, index) => (
+                        fetchData.vagas.map((item, index) => (
                             <CardVaga titulo={item.titulo} empresa={item.empresa}
                                 endereco={item.endereco} dataCriacao={item.dataCriacao}
                                 idVaga={item.idVaga} key={index}
@@ -68,13 +81,17 @@ export default function Perfil() {
                     )}
                 </View>
 
-                <View>
-                    <Text style={Styles.txtSubtitulo}>Requisições em aberto</Text>
-                    <CardRequisicao
-                        titulo='Atualizar SO para Windows 11 nos PCs da empresa'
-                        descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem ....'
-                        prazo='23/12'
-                        categoria='Suporte Técnico'></CardRequisicao>
+                <View style={styles.viewRequisicoes}>
+                    <Text style={styles.txtSubtitulo}>Requisições em aberto</Text>
+                    {fetchData && (
+                        fetchData.requisicoes.map((item, index) => (
+                            <CardRequisicao
+                                key={index} titulo={item.titulo}
+                                descricao={item.descricao}
+                                prazo={item.prazo}
+                                categoria={item.categoria} />
+                        ))
+                    )}
                 </View>
             </View>
         </ScrollView>
