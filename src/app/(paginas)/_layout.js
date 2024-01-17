@@ -72,7 +72,7 @@ export default function Layout() {
                     options={({ navigation }) => ({
                         drawerLabel: 'Sua conta',
                         title: '',
-                        header: () => (<Header variant={1} navigation={navigation} />)
+                        header: () => (<Header variant={1} navigation={navigation} style={{backgroundColor:'#4D4DFF'} } />)
                     })}
                 />
 
@@ -111,7 +111,7 @@ export default function Layout() {
                         drawerItemStyle: {
                             display: 'none'
                         },
-                        header: () => (<Header variant={1} navigation={navigation} />)
+                        header: () => (<Header variant={1} navigation={navigation} style={{backgroundColor:'#D9D9D9'} } />)
                     })}
                 />
             </Drawer>
