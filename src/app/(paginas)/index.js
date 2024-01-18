@@ -29,19 +29,31 @@ export default function Inicial() {
         return null
     }
 
+    const imagens = [require('../../../assets/imgs/telaInicial/incubar.jpg'),
+    require('../../../assets/imgs/telaInicial/requisicao.jpg'),
+    require('../../../assets/imgs/telaInicial/estagio.jpg'),
+    require('../../../assets/imgs/telaInicial/evento.jpg'),
+    require('../../../assets/imgs/telaInicial/reuniao.jpg')]
+
     // Variáveis temporárias de teste:
     var empresa = true
 
     return (
         <View onLayout={onLayoutRootView}>
-            <ScrollView>
-                <View style={styles.viewContainer}>
-                    {empresa && (<CardOpcoes titulo='Incubar sua empresa' descricao='Incube sua empresa... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum vulputate nibh at tempor. z' path='/' style={{ marginVertical: 25 }} />)}
-                    <CardOpcoes titulo='Requisições' descricao='Crie ou resolva requisições... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum vulputate nibh at tempor. z' path='/requisicoes' style={{ marginBottom: 25 }} />
-                    <CardOpcoes titulo='Vagas de estágio' descricao='Crie ou se candidate para vagas... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum vulputate nibh at tempor. z' path='/vagas' style={{ marginBottom: 25 }} />
-                    {empresa && (<CardOpcoes titulo='Agendar reuniões' descricao='Agende reuniões com a incubadora... Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut vestibulum vulputate nibh at tempor. z' path='/agenda' style={{ marginBottom: 25 }} />)}
+            <View style={styles.viewContainer}>
+                <View style={styles.viewRow}>
+                    {empresa && (<CardOpcoes titulo='Incube sua empresa' path='/' imagem={imagens[0]} />)}
+                    <CardOpcoes titulo='Traga seu problema' path='/' imagem={imagens[1]} />
                 </View>
-            </ScrollView>
+                <View style={styles.viewRow}>
+                    <CardOpcoes titulo='Vagas de estágio' path='/' imagem={imagens[2]} />
+                    <CardOpcoes titulo='Editais e eventos' path='/' imagem={imagens[3]} />
+                </View>
+                <View style={styles.viewRow}>
+                    <CardOpcoes titulo='Agendar reuniões' path='/' imagem={imagens[4]} />
+                    <CardOpcoes titulo='Fale conosco' path='/' imagem={imagens[0]} />
+                </View>
+            </View>
         </View>
     )
 }
