@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default styles = StyleSheet.create({
     viewMensagens: {
         height: '90%',
-        padding: 10
+        padding: 10,
     },
     viewMsg: {
         padding: 10,
