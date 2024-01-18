@@ -42,16 +42,16 @@ export default function Inicial() {
         <View onLayout={onLayoutRootView}>
             <View style={styles.viewContainer}>
                 <View style={styles.viewRow}>
-                    {empresa && (<CardOpcoes titulo='Incube sua empresa' path='/' imagem={imagens[0]} />)}
-                    <CardOpcoes titulo='Traga seu problema' path='/' imagem={imagens[1]} />
+                    {empresa && (<CardOpcoes titulo='Incube sua empresa' path='/incubar' imagem={imagens[0]} />)}
+                    <CardOpcoes titulo='Traga seu problema' path='/requisicoes' imagem={imagens[1]} />
                 </View>
                 <View style={styles.viewRow}>
-                    <CardOpcoes titulo='Vagas de estágio' path='/' imagem={imagens[2]} />
-                    <CardOpcoes titulo='Editais e eventos' path='/' imagem={imagens[3]} />
+                    <CardOpcoes titulo='Vagas de estágio' path='/vagas' imagem={imagens[2]} />
+                    <CardOpcoes titulo='Editais e eventos' path='/editaisEeventos' imagem={imagens[3]} />
                 </View>
                 <View style={styles.viewRow}>
-                    <CardOpcoes titulo='Agendar reuniões' path='/' imagem={imagens[4]} />
-                    <CardOpcoes titulo='Fale conosco' path='/' imagem={imagens[0]} />
+                    <CardOpcoes titulo='Agendar reuniões' path='/agenda' imagem={imagens[4]} />
+                    <CardOpcoes titulo='Fale conosco' path='/conversas' imagem={imagens[0]} />
                 </View>
             </View>
         </View>

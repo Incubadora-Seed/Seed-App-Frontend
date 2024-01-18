@@ -43,7 +43,7 @@ export default function Perfil() {
                 <Text style={styles.nomeUsusario}>{fetchData.nome}</Text>
             </View>
             <View style={styles.viewMain}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {}}>
                     <View style={styles.viewEditar}>
                         <Text style={styles.txtEditar}>Editar perfil</Text>
                         <Ionicons name="pencil-sharp" size={25} color="black" />

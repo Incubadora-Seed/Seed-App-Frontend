@@ -79,6 +79,15 @@ export default function Layout() {
                     })}
                 />
 
+                <Drawer.Screen
+                    name='editaisEeventos/index'
+                    options={({ navigation }) => ({
+                        drawerLabel: 'Editais e eventos',
+                        title: '',
+                        header: () => (<Header variant={1} navigation={navigation} />)
+                    })}
+                />
+
                 {/* Páginas que não deverão aparecer no menu: */}
                 <Drawer.Screen
                     name='requisicoes/[id]'

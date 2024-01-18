@@ -3,8 +3,7 @@ import { StyleSheet } from 'react-native';
 export default styles = StyleSheet.create({
     link: {
         width: '49.5%',
-        height: '100%',
-        backgroundColor: 'red'
+        height: '100%'
     },
     imgBackground: {
         width: '100%',

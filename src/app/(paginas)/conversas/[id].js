@@ -48,12 +48,8 @@ export default function Chat() {
     ]
 
     const styleMensagem = (enviado) => {
-        if (enviado) {
-            return Styles.viewMsgEnviada
-        }
-        else {
-            return Styles.viewMsgRecebida
-        }
+        if (enviado)  return Styles.viewMsgEnviada
+        else return Styles.viewMsgRecebida
     }
 
     return (
@@ -74,11 +70,11 @@ export default function Chat() {
             </ScrollView>
 
             <View style={Styles.viewDigitar}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {}}>
                     <Ionicons name="add-circle-outline" size={30} color='#000' />
                 </TouchableOpacity>
                 <Input placeholder="Mensagem" style={{ width: '70%' }} styleIcon={{ display: 'none' }} />
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {}}>
                     <Ionicons name="send-outline" size={30} color='#000' />
                 </TouchableOpacity>
             </View>
