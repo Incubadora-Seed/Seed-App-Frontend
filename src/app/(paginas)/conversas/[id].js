@@ -10,6 +10,9 @@ import styles from '../../../styles/Conversa';
 export default function Chat() {
     const navigation = useNavigation()
     const [mediaTrayAberta, setMediaTrayAberta] = useState(false)
+    const [arquivoSelecionado, setArquivoSelecionado] = useState(false)
+    const [fileIcon, setFileIcon] = useState()
+    const [fileName, setFileName] = useState()
 
     // Variáveis de teste:
     var nomeUsuario = 'Vanessa'
@@ -46,6 +49,29 @@ export default function Chat() {
         setMediaTrayAberta(!mediaTrayAberta)
     }
 
+    function setIconeETextoArquivo() {
+        let icon
+        let txt
+        if (arquivoSelecionado.length > 1) {
+            icon = 'document-text-outline'
+            txt = `${arquivoSelecionado.length} arquivos.`
+        } else {
+            let type = arquivoSelecionado[0].mimeType
+            txt = arquivoSelecionado[0].name
+            if (type.includes('image')) icon = 'image-outline'
+            if (type.includes('video')) icon = 'videocam-outline'
+            if (type.includes('pdf')) icon = 'document-text-outline'
+            if (type.includes('audio')) icon = 'headset-outline'
+        }
+        setFileIcon(icon)
+        setFileName(txt)
+    }
+
+    useEffect(() => {
+        if (!arquivoSelecionado) return
+        setIconeETextoArquivo()
+    }, [arquivoSelecionado])
+
     useEffect(() => {
         if (falandoComEmpresa) {
             navigation.setOptions({
@@ -56,6 +82,7 @@ export default function Chat() {
                 header: () => (<Header variant={1} navigation={navigation} style={{ backgroundColor: '#D9D9D9' }} title={nomeUsuario} />)
             })
         }
+        // setArquivoSelecionado([{ name: 'teste', mimeType: 'image' }])
     }, [])
 
     return (
@@ -88,10 +115,21 @@ export default function Chat() {
             <MediaTray mediaTrayAberta={mediaTrayAberta} />
 
             <View style={styles.viewDigitar}>
-                <TouchableOpacity onPress={handleBotaoMediaTray}>
-                    <Ionicons name="add-circle-outline" size={30} color='#000' />
-                </TouchableOpacity>
-                <Input placeholder="Mensagem" style={{ width: '70%' }} styleIcon={{ display: 'none' }} />
+                {!arquivoSelecionado ? (
+                    <>
+                        <TouchableOpacity onPress={handleBotaoMediaTray}>
+                            <Ionicons name="add-circle-outline" size={30} color='#000' />
+                        </TouchableOpacity>
+                        <Input placeholder="Mensagem" style={{ width: '70%' }} styleIcon={{ display: 'none' }} />
+                    </>
+                ) : (
+                    <>
+                        <TouchableOpacity onPress={() => { }}>
+                            <Ionicons name={fileIcon} size={30} color='#000' />
+                        </TouchableOpacity>
+                        <Ionicons />
+                    </>
+                )}
                 <TouchableOpacity onPress={() => { }}>
                     <Ionicons name="send-outline" size={30} color='#000' />
                 </TouchableOpacity>
