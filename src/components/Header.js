@@ -14,13 +14,18 @@ import { Link } from 'expo-router';
 //   1 - Return e Menu
 //   2 - Perfil e Menu
 
-export default function Header({ variant, style, navigation, title }) {
-    
+export default function Header({ variant, style, navigation, title, titlePath }) {
     return (
         <View style={[styles.viewMain, style]}>
             {variant === 1 && <ButtonReturn onPress={navigation.goBack} />}
             {variant === 2 && <ButtonPerfil />}
-            {title && <Text style={styles.txtNome}>{title}</Text>}
+            {(title && !titlePath) && <Text style={styles.txtNome}>{title}</Text>}
+            {(title && titlePath) &&
+                <Link href={titlePath} asChild>
+                    <TouchableOpacity>
+                        <Text style={styles.txtNome}>{title}</Text>
+                    </TouchableOpacity>
+                </Link>}
             <ButtonMenu onPress={navigation.toggleDrawer} />
         </View>
     )

@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import CardEdital from "../../../components/CardEdital";
 import CardEvento from "../../../components/CardEvento";
-import Styles from "../../../styles/EditaisEeventos";
+import styles from "../../../styles/EditaisEeventos";
 
 export default function EditaisEeventos() {
 
@@ -38,10 +38,10 @@ export default function EditaisEeventos() {
     }
 
     return (
-        <ScrollView style={Styles.viewContainer}>
-            <Text style={Styles.txtTitulo}>Editais e eventos</Text>
+        <ScrollView style={styles.viewContainer}>
+            <Text style={styles.txtTitulo}>Editais e eventos</Text>
 
-            <View style={Styles.teste}>
+            <View style={styles.teste}>
                 {fetchData.editais && (
                     fetchData.editais.map((item, index) => (
                         <CardEdital titulo={item.titulo} desc={item.desc} data={item.data} path={item.path} style={item.style} key={index}/>

@@ -17,8 +17,9 @@ export default function Layout() {
                     drawerInactiveTintColor: '#000',
                     drawerPosition: 'right',
                     sceneContainerStyle: {
-                        backgroundColor: '#FFF'
-                    }
+                        backgroundColor: '#FFF',
+                    },
+                    unmountOnBlur: true
                 })}>
                 <Drawer.Screen
                     name='index'
@@ -122,7 +123,7 @@ export default function Layout() {
                     options={{
                         drawerLabel: 'Cadastro',
                         title: '',
-                        headerShown: false
+                        headerShown: false,
                     }}
                 />
 
@@ -131,7 +132,7 @@ export default function Layout() {
                     options={{
                         drawerLabel: 'Login',
                         title: '',
-                        headerShown: false
+                        headerShown: false,
                     }}
                 />
 

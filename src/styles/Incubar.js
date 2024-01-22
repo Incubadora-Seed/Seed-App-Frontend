@@ -2,19 +2,17 @@ import { StyleSheet } from 'react-native';
 
 export default styles = StyleSheet.create({
     viewContainer: {
-        flex: 1,
         backgroundColor: '#fff',
-        padding: 20,
-        justifyContent: 'space-around',
-        alignItems: 'center'
-        
+        padding: 15,
+        alignItems: 'center',
     },
     txtTitulo: {
         fontFamily: 'Poppins_600SemiBold',
         fontSize: 32,
         color: '#000',
         textAlign: 'center',
-        lineHeight: 35
+        lineHeight: 35,
+        marginBottom: 25
     },
     txtDesc: {
         fontFamily: 'Poppins_300Light',
@@ -22,23 +20,29 @@ export default styles = StyleSheet.create({
         color: '#000',
         textAlign: 'justify',
         lineHeight: 23,
+        marginBottom: 20
+    },
+    linkBtnEdital: {
+        width: '100%',
+        alignSelf: 'center',
+        marginBottom: 15
     },
     btnEdital: {
         flexDirection: 'row',
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
+        gap: 10,
         alignItems: 'center',
-        backgroundColor: '#FF4D4D',
+        backgroundColor: '#ff6464',
         borderRadius: 10,
-        padding: 10,
-        width: '70%',
-        alignSelf: 'center',
+        paddingHorizontal: 10,
+        paddingVertical: 10,
+        width: 'auto'
     },
     txtEdital: {
         fontFamily: 'Poppins_300Light',
         fontSize: 24,
         color: '#000',
         textAlign: 'center',
-        marginLeft: 10,
-        lineHeight: 40,
+        lineHeight: 35,
     }
 });

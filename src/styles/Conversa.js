@@ -1,9 +1,15 @@
 import { StyleSheet } from 'react-native';
 
 export default styles = StyleSheet.create({
+    viewMain: {
+        height: '100%',
+        width: '100%',
+    },
+    scrollViewMensagens: {
+        flexGrow: 1
+    },
     viewMensagens: {
-        height: '90%',
-        padding: 10,
+        padding: 10
     },
     viewMsg: {
         padding: 10,
@@ -19,12 +25,18 @@ export default styles = StyleSheet.create({
         backgroundColor: '#D9D9D9'
     },
     txtConteudo: {
-        fontSize: 20,
+        fontSize: 18,
         fontFamily: 'Poppins_300Light',
         lineHeight: 25,
-        textAlign: 'justify',
+        textAlign: 'left',
         maxWidth: '90%',
         minWidth: '30%',
+    },
+    txtConteudoRecebido: {
+        color: '#000'
+    },
+    txtConteudoEnviado: {
+        color: '#fff'
     },
     txtTempo: {
         fontSize: 16,
@@ -36,8 +48,9 @@ export default styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        padding: 10,
+        paddingVertical: 10,
+        paddingHorizontal: 17,
         backgroundColor: '#D9D9D9',
-        height: '10%',
-    }
+        height: 60
+    },
 });

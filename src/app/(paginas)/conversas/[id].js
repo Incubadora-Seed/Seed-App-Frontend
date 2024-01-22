@@ -1,23 +1,19 @@
 import { useNavigation } from 'expo-router/src/useNavigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Header from '../../../components/Header';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { View, ScrollView, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import Input from '../../../components/Input';
-import Styles from '../../../styles/Conversa';
+import MediaTray from '../../../components/MediaTray';
+import styles from '../../../styles/Conversa';
 
 export default function Chat() {
     const navigation = useNavigation()
+    const [mediaTrayAberta, setMediaTrayAberta] = useState(false)
+
     // Variáveis de teste:
     var nomeUsuario = 'Vanessa'
-
-    useEffect(() => {
-        navigation.setOptions({
-            header: () => (<Header variant={1} navigation={navigation} style={{ backgroundColor: '#D9D9D9' }} title={nomeUsuario} />)
-        })
-    })
-
+    var falandoComEmpresa = true
     var fetchData = [
         {
             conteudo: 'teste 1',
@@ -44,37 +40,59 @@ export default function Chat() {
             tempo: '19:40',
             enviado: false
         },
-
     ]
 
-    const styleMensagem = (enviado) => {
-        if (enviado)  return Styles.viewMsgEnviada
-        else return Styles.viewMsgRecebida
+    function handleBotaoMediaTray() {
+        setMediaTrayAberta(!mediaTrayAberta)
     }
 
+    useEffect(() => {
+        if (falandoComEmpresa) {
+            navigation.setOptions({
+                header: () => (<Header variant={1} navigation={navigation} style={{ backgroundColor: '#D9D9D9' }} title={nomeUsuario} titlePath={'#'} />)
+            })
+        } else {
+            navigation.setOptions({
+                header: () => (<Header variant={1} navigation={navigation} style={{ backgroundColor: '#D9D9D9' }} title={nomeUsuario} />)
+            })
+        }
+    }, [])
+
     return (
-        <View>
-            <ScrollView style={Styles.viewMensagens}>
+        <View style={styles.viewMain}>
+            <ScrollView style={styles.scrollViewMensagens} contentContainerStyle={styles.viewMensagens}>
                 {fetchData && (
-                    fetchData.map((item, index) => (
-                        <View style={[Styles.viewMsg, styleMensagem(item.enviado)]} key={index}>
-                            <Text style={Styles.txtConteudo}>
-                                {item.conteudo}
-                            </Text>
-                            <Text style={Styles.txtTempo}>
-                                {item.tempo}
-                            </Text>
-                        </View>
-                    ))
+                    fetchData.map((item, index) => {
+                        let styleView, styleTxt
+                        if (item.enviado) {
+                            styleView = styles.viewMsgEnviada
+                            styleTxt = styles.txtConteudoEnviado
+                        } else {
+                            styleView = styles.viewMsgRecebida
+                            styleTxt = styles.txtConteudoRecebido
+                        }
+                        return (
+                            <View style={[styles.viewMsg, styleView]} key={index}>
+                                <Text style={[styles.txtConteudo, styleTxt]}>
+                                    {item.conteudo}
+                                </Text>
+                                <Text style={styles.txtTempo}>
+                                    {item.tempo}
+                                </Text>
+                            </View>
+                        )
+                    })
                 )}
             </ScrollView>
 
-            <View style={Styles.viewDigitar}>
-                <TouchableOpacity onPress={() => {}}>
+            <MediaTray mediaTrayAberta={mediaTrayAberta} />
+
+            <View style={styles.viewDigitar}>
+                <TouchableOpacity onPress={handleBotaoMediaTray}>
                     <Ionicons name="add-circle-outline" size={30} color='#000' />
                 </TouchableOpacity>
                 <Input placeholder="Mensagem" style={{ width: '70%' }} styleIcon={{ display: 'none' }} />
-                <TouchableOpacity onPress={() => {}}>
+                <TouchableOpacity onPress={() => { }}>
                     <Ionicons name="send-outline" size={30} color='#000' />
                 </TouchableOpacity>
             </View>
