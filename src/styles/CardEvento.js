@@ -30,6 +30,7 @@ export default styles = StyleSheet.create({
         fontFamily: 'Poppins_300Light',
         fontSize: 16,
         lineHeight: 18,
+        textAlign: 'justify'
     },
     viewBaixo: {
         flexDirection: 'row',

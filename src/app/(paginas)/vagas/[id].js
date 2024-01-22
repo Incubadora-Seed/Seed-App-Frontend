@@ -64,10 +64,10 @@ Requisitos Essenciais:
                 </View>
                 <View>
                     <Text style={styles.txtDescricaoTitulo}>Descrição da vaga:</Text>
-                    <Text style={styles.descItensZZ}>{fetchData.descricao}</Text>
+                    <Text style={styles.descItens}>{fetchData.descricao}</Text>
 
                 </View>
-                <ButtonLong style={styles.btnCandidatar} text="Candidatar-se" />
+                <ButtonLong text="Candidatar-se" />
             </View>
         </ScrollView>
     )
