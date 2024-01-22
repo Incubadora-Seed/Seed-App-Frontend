@@ -21,7 +21,7 @@ export default function EditaisEeventos() {
                 path: '/',
             }
         ],
-        eventos: [
+        eventos:[
             {
                 imagem: require('../../../../assets/imgs/evento.png'),
                 nome: 'Evento 1',
@@ -30,7 +30,7 @@ export default function EditaisEeventos() {
             },
             {
                 imagem: require('../../../../assets/imgs/evento.png'),
-                nome: 'Evento 2',
+                nome: '3ª Jornada Empreendedora',
                 desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse scelerisque ligula vitae augue consectetur lacinia at eget mauris',
                 data: '10/02'
             }

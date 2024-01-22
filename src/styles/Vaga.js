@@ -12,17 +12,6 @@ export default styles = StyleSheet.create({
         lineHeight: 44,
         marginVertical: 10
     },
-    imgEmpresa: {
-        width: 50,
-        height: 50,
-        borderRadius: 50
-    },
-    txtEmpresa: {
-        marginLeft: 15,
-        fontFamily: "Poppins_400Regular",
-        fontSize: 20,
-        lineHeight: 27,
-    },
     viewIcons: {
         flexDirection: "row",
         width: "85%",
@@ -47,23 +36,10 @@ export default styles = StyleSheet.create({
         lineHeight: 27,
         marginVertical: 10
     },
-    txtDescricaoSubtitulo: {
-        fontFamily: "Poppins_500Medium",
-        fontSize: 16,
-        marginVertical: 5,
-        lineHeight: 22,
-        marginVertical: 10
-    },
-    viewItens: {
-        paddingHorizontal: 10
-    },
     descItens: {
         fontFamily: "Poppins_400Regular",
-        fontSize: 14,
-        lineHeight: 19,
-        marginBottom: 5
-    },
-    btnCandidatar: {
-        marginVertical: 25
+        fontSize: 16,
+        lineHeight: 22,
+        textAlign: "justify",
     }
 });
