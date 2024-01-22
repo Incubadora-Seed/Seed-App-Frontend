@@ -22,7 +22,18 @@ export default function EditaisEeventos() {
             }
         ],
         eventos: [
-
+            {
+                imagem: require('../../../../assets/imgs/evento.png'),
+                nome: 'Evento 1',
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse scelerisque ligula vitae augue consectetur lacinia at eget mauris',
+                data: '10/02'
+            },
+            {
+                imagem: require('../../../../assets/imgs/evento.png'),
+                nome: 'Evento 2',
+                desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse scelerisque ligula vitae augue consectetur lacinia at eget mauris',
+                data: '10/02'
+            }
         ]
     }
 
@@ -30,10 +41,16 @@ export default function EditaisEeventos() {
         <ScrollView style={Styles.viewContainer}>
             <Text style={Styles.txtTitulo}>Editais e eventos</Text>
 
-            <View>
+            <View style={Styles.teste}>
                 {fetchData.editais && (
                     fetchData.editais.map((item, index) => (
                         <CardEdital titulo={item.titulo} desc={item.desc} data={item.data} path={item.path} style={item.style} key={index}/>
+                    ))
+                )}
+
+                {fetchData.eventos && (
+                    fetchData.eventos.map((item, index) => (
+                        <CardEvento imagem={item.imagem} nome={item.nome} desc={item.desc} data={item.data}  key={index}/>
                     ))
                 )}
             </View>

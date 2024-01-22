@@ -6,14 +6,16 @@ import Styles from "../styles/CardEdital";
 
 export default function CardEdital({ titulo, desc, data, path, style, onPress }) {
     return (
-        <TouchableOpacity onPress={onPress} activeOpacity={0.7} style={[Styles.btnEdital, style]}>
+        <Link asChild style={[Styles.btnEdital, style]}  href={path}>
+        <TouchableOpacity onPress={onPress} activeOpacity={0.7} >
             <View style={Styles.viewTitulo}>
                 <Ionicons name="document-text-outline" size={30} color="black" />
                 <Text style={Styles.txtTitulo}>{titulo}</Text>
             </View>
             <Text style={Styles.txtDesc}>{desc}</Text>
             <Text style={Styles.txtData}>{data}</Text>
-        </TouchableOpacity>
+            </TouchableOpacity>
+        </Link>
 
     )
 }
