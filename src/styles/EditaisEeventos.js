@@ -9,6 +9,7 @@ export default styles = StyleSheet.create({
         fontSize: 32,
         color: '#000',
         textAlign: 'center',
-        lineHeight: 35
+        lineHeight: 35,
+        paddingBottom: 20
     },
 });
