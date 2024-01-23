@@ -11,8 +11,19 @@ export default function CardVaga({ titulo, empresa, endereco, dataCriacao, style
         var d2 = new Date()
 
         var diffInMs = d2 - (new Date(d1))
-        var diffInDays = diffInMs / (1000 * 60 * 60 * 24)
-        setData(Math.trunc(diffInDays))
+        var diffInMinutes = diffInMs / 60000
+        if (diffInMinutes < 60) {
+            setData(Math.trunc(diffInHours) + ' minutos')
+        } else {
+            var diffInHours = diffInMs / 3600000
+            if (diffInHours < 24) {
+                setData(Math.trunc(diffInHours) + ' horas')
+            }
+            else {
+                var diffInDays = diffInMs / 86400000
+                setData(Math.trunc(diffInDays) + ' dias')
+            }
+        }
     }
 
     useEffect(() => {
@@ -31,7 +42,7 @@ export default function CardVaga({ titulo, empresa, endereco, dataCriacao, style
                         <Text style={styles.txtEmpresa}>{empresa}</Text>
                         <View style={styles.viewBaixa}>
                             <Text style={styles.txtBaixo}>{endereco}</Text>
-                            {data ? (<Text style={styles.txtBaixo}>Há {data} dias</Text>) : (null)}
+                            {data ? (<Text style={styles.txtBaixo}>Há {data}</Text>) : (null)}
                         </View>
                     </View>
                 </View>

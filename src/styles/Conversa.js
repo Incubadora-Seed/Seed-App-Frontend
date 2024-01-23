@@ -53,4 +53,18 @@ export default styles = StyleSheet.create({
         backgroundColor: '#D9D9D9',
         height: 60
     },
+    viewEnviarArquivo: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: '70%',
+    },
+    txtNomeArquivo: {
+        flex: 1,
+        color: '#000',
+        fontFamily: 'Poppins_400Regular',
+        fontSize: 20,
+        textAlign: 'left',
+        lineHeight: 26,
+        marginLeft: 8
+    }
 });
