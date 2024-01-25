@@ -1,21 +1,24 @@
 import { useNavigation } from 'expo-router/src/useNavigation';
+import { useLocalSearchParams } from 'expo-router';
+import * as FileSystem from 'expo-file-system';
 import { useEffect, useState } from 'react';
-import Header from '../../../components/Header';
+import { useForm, Controller } from 'react-hook-form'
 import { View, ScrollView, Text, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import Header from '../../../components/Header';
 import Input from '../../../components/Input';
 import MediaTray from '../../../components/MediaTray';
-import * as FileSystem from 'expo-file-system';
-import { useForm, Controller } from 'react-hook-form'
+import CardMensagem from '../../../components/CardMensagem';
 import styles from '../../../styles/Conversa';
 
 export default function Chat() {
     const navigation = useNavigation()
+    const { id } = useLocalSearchParams()
     const [mediaTrayAberta, setMediaTrayAberta] = useState(false)
     const [arquivoSelecionado, setArquivoSelecionado] = useState(false)
     const [fileIcon, setFileIcon] = useState()
     const [fileName, setFileName] = useState()
-    const [ateste, setAteste] = useState()
+    const [conteudo, setConteudo] = useState()
     const [mensagens, setMensagens] = useState()
     const { control, handleSubmit, reset, formState } = useForm()
 
@@ -23,43 +26,52 @@ export default function Chat() {
     var nomeUsuario = 'Marcia'
     var nomeDestinatario = 'Vanessa'
     var falandoComEmpresa = true
+    // Fim variáveis de teste
 
     const documentDirectory = FileSystem.documentDirectory
 
+    async function verificarCacheExiste() {
+        let leitorPasta = await FileSystem.getInfoAsync(documentDirectory + 'armazenamento')
+        let leitorArquivo = await FileSystem.getInfoAsync(documentDirectory + 'armazenamento/mensagens.json')
+
+        if (!leitorPasta.exists) {
+            await FileSystem.makeDirectoryAsync(documentDirectory + 'armazenamento')
+        }
+        if (!leitorArquivo.exists) {
+            await FileSystem.writeAsStringAsync(documentDirectory + 'armazenamento/mensagens.json', JSON.stringify([]))
+        }
+    }
+
     async function lerMensagensTemp() {
-        let leitor = await FileSystem.readAsStringAsync(documentDirectory + 'armazenamento/mensagens.json')
-        setMensagens(JSON.parse(leitor))
+        await verificarCacheExiste()
+
+        FileSystem.readAsStringAsync(documentDirectory + 'armazenamento/mensagens.json')
+            .then((valor) => {
+                let arr = JSON.parse(valor)
+                let obj = arr.find(v => v.id == id)
+                if (obj == undefined) {
+                    let conteudoNovo = { id, mensagens: [] }
+                    arr.push(conteudoNovo)
+                    FileSystem.writeAsStringAsync(documentDirectory + 'armazenamento/mensagens.json', JSON.stringify(arr))
+                    obj = arr.find(v => v.id == id)
+                }
+                setConteudo(arr)
+                setMensagens(obj.mensagens)
+            })
+            .catch((err) => {
+                if (err) {
+                    console.log('Erro em ler mensagens:\n', err)
+                }
+            })
     }
 
     async function enviarMensagemTemp({ mensagem }) {
-        let leitor = await FileSystem.readAsStringAsync(documentDirectory + 'armazenamento/mensagens.json')
-        let conteudo = JSON.parse(leitor)
+        let obj = conteudo.find(v => v.id == id)
         let dataAtual = new Date()
         let conteudoNovo = { mensagem, origem: nomeUsuario, tempo: dataAtual }
-        conteudo.push(conteudoNovo)
+        obj.mensagens.push(conteudoNovo)
         await FileSystem.writeAsStringAsync(documentDirectory + 'armazenamento/mensagens.json', JSON.stringify(conteudo))
         lerMensagensTemp()
-    }
-
-    // Fim variáveis de teste
-
-    function calcularData(dataCriacao) {
-        var d1 = new Date(dataCriacao)
-        var d2 = new Date()
-
-        var diffInMs = d2 - d1
-        var diffInHours = diffInMs / 3600000
-        if (diffInHours < 24) {
-            let hora = d1.getHours().toString()
-            let minuto = d1.getMinutes().toString()
-            if (hora.length == 1) hora = `0${hora}`
-            if (minuto.length == 1) minuto = `0${minuto}`
-            return `${hora}:${minuto}`
-        }
-        else {
-            var diffInDays = diffInMs / 86400000
-            return (Math.trunc(diffInDays) + ' dias')
-        }
     }
 
     function handleBotaoMediaTray() {
@@ -121,27 +133,9 @@ export default function Chat() {
         <View style={styles.viewMain}>
             <ScrollView style={styles.scrollViewMensagens} contentContainerStyle={styles.viewMensagens}>
                 {mensagens && (
-                    mensagens.map((item, index) => {
-                        let styleView, styleTxt
-                        if (item.origem == nomeUsuario) {
-                            styleView = styles.viewMsgEnviada
-                            styleTxt = styles.txtConteudoEnviado
-                        } else {
-                            styleView = styles.viewMsgRecebida
-                            styleTxt = styles.txtConteudoRecebido
-                        }
-                        let tempo = calcularData(item.tempo)
-                        return (
-                            <View style={[styles.viewMsg, styleView]} key={index}>
-                                <Text style={[styles.txtConteudo, styleTxt]}>
-                                    {item.mensagem}
-                                </Text>
-                                <Text style={styles.txtTempo}>
-                                    {tempo}
-                                </Text>
-                            </View>
-                        )
-                    })
+                    mensagens.map((item, index) => (
+                        <CardMensagem objMsg={item} nomeUsuario={nomeUsuario} key={index} />
+                    ))
                 )}
             </ScrollView>
 

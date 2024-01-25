@@ -1,6 +1,7 @@
-import { View, Text } from 'react-native';
+import { Text, ScrollView } from 'react-native';
+import * as FileSystem from 'expo-file-system';
+import { useEffect } from 'react';
 import CardConversa from '../../../components/CardConversa';
-import { ScrollView } from 'react-native-gesture-handler';
 import styles from '../../../styles/Conversas';
 
 export default function Conversas() {
@@ -54,6 +55,24 @@ export default function Conversas() {
         msg: 'Lorem ipsum dolor sit amet, consectetur.....',
         tempo: '10/01'
     }]
+
+    const documentDirectory = FileSystem.documentDirectory
+
+    async function verificarCacheExiste() {
+        let leitorPasta = await FileSystem.getInfoAsync(documentDirectory + 'armazenamento')
+        let leitorArquivo = await FileSystem.getInfoAsync(documentDirectory + 'armazenamento/mensagens.json')
+
+        if (!leitorPasta.exists) {
+            await FileSystem.makeDirectoryAsync(documentDirectory + 'armazenamento')
+        }
+        if (!leitorArquivo.exists) {
+            await FileSystem.writeAsStringAsync(documentDirectory + 'armazenamento/mensagens.json', JSON.stringify([]))
+        }
+    }
+
+    useEffect(() => {
+        verificarCacheExiste()
+    }, [])
 
     return (
         <ScrollView>
